@@ -1,73 +1,74 @@
 import os
-import sys
 import numpy as np
-import pandas as pd
 
-'''
-defining common constant variable for training pipeline
-'''
+"""
+Defining common constant variable for training pipeline
+"""
+
 TARGET_COLUMN = "Result"
-PIPELINE_NAME:str = "NetworkSecurity"
-ARTIFACT_DIR:str = "Artifacts"
-FILE_NAME: str = "phisingData.csv"
 
-TRAIN_FILE_NAME:str = "train.csv"
-TEST_FILE_NAME: str = "test.csv"
+PIPELINE_NAME = "NetworkSecurity"
+ARTIFACT_DIR = "Artifacts"
 
-SCHEMA_FILE_PATH = os.path.join("data_schema","schema.yaml")
+FILE_NAME = "phisingData.csv"
 
-SAVED_MODEL_DIR = os.path.join("saved_models")
-SAVED_MODEL_PATH = SAVED_MODEL_DIR
+TRAIN_FILE_NAME = "train.csv"
+TEST_FILE_NAME = "test.csv"
+
+SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
 
 MODEL_FILE_NAME = "model.pkl"
-'''
-Data Ingestion related constant start with DATA_INGESTION VAR NAME
-'''
 
-DATA_INGESTION_COLLECTION_NAME: str="NetworkData"
-DATA_INGESTION_DATABASE_NAME: str="RAVI"
-DATA_INGESTION_DIR_NAME:str="data_ingestion"
-DATA_INGESTION_FEATURE_STORE_DIR:str="feature_store"
-DATA_INGESTION_INGESTED_DIR:str="ingested"
-DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO:float=0.2
+"""
+Data Ingestion Constants
+"""
 
+DATA_INGESTION_COLLECTION_NAME = "NetworkData"
+DATA_INGESTION_DATABASE_NAME = "RAVI"
 
+DATA_INGESTION_DIR_NAME = "data_ingestion"
+DATA_INGESTION_FEATURE_STORE_DIR = "feature_store"
+DATA_INGESTION_INGESTED_DIR = "ingested"
 
-'''
-Data Validation related constant start with DATA_VALIDATION VAR NAME
-'''
-DATA_VALIDATION_DIR_NAME: str = "data_validation"
-DATA_VALIDATION_VALID_DIR: str = "validated"
-DATA_VALIDATION_INVALID_DIR: str = "invalid"
-DATA_VALIDATION_DRIFT_REPORT_DIR: str= "drift_report"
-DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
-PREPROCESSING_OBJECT_FILE_NAME:str="preprocessing.pkl"
-'''
-Data Transformation related constant start with DATA_TRANSFORMATION VAR name
+DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO = 0.2
 
-'''
+"""
+Data Validation Constants
+"""
 
-DATA_TRANSFORMATION_DIR_NAME: str ="data_transformation"
-DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR:str="transformed"
-DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR:str="transformed_object"
+DATA_VALIDATION_DIR_NAME = "data_validation"
+DATA_VALIDATION_VALID_DIR = "validated"
+DATA_VALIDATION_INVALID_DIR = "invalid"
 
+DATA_VALIDATION_DRIFT_REPORT_DIR = "drift_report"
+DATA_VALIDATION_DRIFT_REPORT_FILE_NAME = "report.yaml"
 
-## knn imputer to replace nan values
-DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
-    "missing_values":np.nan,
+PREPROCESSING_OBJECT_FILE_NAME = "preprocessing.pkl"
+
+"""
+Data Transformation Constants
+"""
+
+DATA_TRANSFORMATION_DIR_NAME = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR = "transformed"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR = "transformed_object"
+
+DATA_TRANSFORMATION_IMPUTER_PARAMS = {
+    "missing_values": np.nan,
     "n_neighbors": 3,
     "weights": "uniform",
 }
-DATA_TRANSFORMATION_TRAIN_FILE_PATH: str = "train.npy"
 
-DATA_TRANSFORMATION_TEST_FILE_PATH: str = "test.npy"
+DATA_TRANSFORMATION_TRAIN_FILE_PATH = "train.npy"
+DATA_TRANSFORMATION_TEST_FILE_PATH = "test.npy"
 
 """
-Model Trainer related constant start with MODE TRAINER VAR NAME
+Model Trainer Constants
 """
 
-MODEL_TRAINER_DIR_NAME: str = "model_trainer"
-MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
-MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
-MODEL_TRAINER_EXPECTED_SCORE:float = 0.6
-MODEL_TRAINER_OVER_FIITING_UNDER_FITTING_THRESHOLD: float=0.05
+MODEL_TRAINER_DIR_NAME = "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_DIR = "trained_model"
+MODEL_TRAINER_TRAINED_MODEL_NAME = "model.pkl"
+
+MODEL_TRAINER_EXPECTED_SCORE = 0.6
+MODEL_TRAINER_OVER_FIITING_UNDER_FITTING_THRESHOLD = 0.05
