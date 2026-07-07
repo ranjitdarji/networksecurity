@@ -1,0 +1,23 @@
+artifact_path: file:///D:/udemyfinal/NetworkSecurity/mlruns/0/models/m-12ece3a99eb449ab8047bea7b578d362/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.10.0
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.7.2
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-12ece3a99eb449ab8047bea7b578d362
+model_size_bytes: 12322437
+model_uuid: m-12ece3a99eb449ab8047bea7b578d362
+prompts: null
+run_id: 82ddf3087c83403eb2f0d64aa0aa0b36
+utc_time_created: '2026-07-06 17:40:17.855993'

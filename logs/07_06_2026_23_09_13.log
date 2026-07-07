@@ -1,0 +1,36 @@
+[ 2026-07-06 23:09:18,249 ] 30 root - INFO - Initiate the ingestion 
+[ 2026-07-06 23:09:23,332 ] 66 root - INFO - Performed train test split on the dataframe 
+[ 2026-07-06 23:09:23,332 ] 68 root - INFO - Exites split_data_as_train_test method of Data_Ingestion class 
+[ 2026-07-06 23:09:23,333 ] 76 root - INFO - Exporting train and file path. 
+[ 2026-07-06 23:09:23,377 ] 85 root - INFO - Exported train and test file path.  
+[ 2026-07-06 23:09:23,378 ] 34 root - INFO - Data Ingestion completed 
+[ 2026-07-06 23:09:23,385 ] 47 root - INFO - Initiate the data validation 
+[ 2026-07-06 23:09:23,443 ] 33 root - INFO - Required number of columns:2 
+[ 2026-07-06 23:09:23,443 ] 34 root - INFO - Data frame has columns:31 
+[ 2026-07-06 23:09:23,443 ] 33 root - INFO - Required number of columns:2 
+[ 2026-07-06 23:09:23,444 ] 34 root - INFO - Data frame has columns:31 
+[ 2026-07-06 23:09:23,561 ] 51 root - INFO - Data validation completed 
+[ 2026-07-06 23:09:23,562 ] 61 root - INFO - Data transformation started 
+[ 2026-07-06 23:09:23,562 ] 56 root - INFO - Entered initiate_data_transformation method 
+[ 2026-07-06 23:09:23,562 ] 59 root - INFO - Starting data transformation 
+[ 2026-07-06 23:09:23,582 ] 42 root - INFO - Entered get_data_transformer_object method 
+[ 2026-07-06 23:09:23,582 ] 48 root - INFO - KNNImputer initialized with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'} 
+[ 2026-07-06 23:09:23,594 ] 51 root - INFO - Entered save_object method 
+[ 2026-07-06 23:09:23,596 ] 58 root - INFO - Exited save_object method 
+[ 2026-07-06 23:09:23,596 ] 51 root - INFO - Entered save_object method 
+[ 2026-07-06 23:09:23,601 ] 58 root - INFO - Exited save_object method 
+[ 2026-07-06 23:09:23,601 ] 72 root - INFO - Data transformation completed 
+[ 2026-07-06 23:09:23,602 ] 85 root - INFO - Model Training Started 
+[ 2026-07-06 23:09:29,769 ] 119 root - INFO - Random Forest --> Train Accuracy: 0.9899 | Test Accuracy: 0.9733 
+[ 2026-07-06 23:09:29,965 ] 119 root - INFO - Decision Tree --> Train Accuracy: 0.9899 | Test Accuracy: 0.9643 
+[ 2026-07-06 23:09:58,734 ] 119 root - INFO - Gradient Boosting --> Train Accuracy: 0.9662 | Test Accuracy: 0.9665 
+[ 2026-07-06 23:09:58,843 ] 119 root - INFO - Logistic Regression --> Train Accuracy: 0.9275 | Test Accuracy: 0.9272 
+[ 2026-07-06 23:10:04,718 ] 119 root - INFO - AdaBoost --> Train Accuracy: 0.9263 | Test Accuracy: 0.9267 
+[ 2026-07-06 23:10:05,076 ] 110 root - INFO - Best Model Found : Random Forest 
+[ 2026-07-06 23:10:05,076 ] 111 root - INFO - Best Model Accuracy : 0.9733152419719584 
+[ 2026-07-06 23:10:24,940 ] 51 root - INFO - Entered save_object method 
+[ 2026-07-06 23:10:24,955 ] 58 root - INFO - Exited save_object method 
+[ 2026-07-06 23:10:24,955 ] 51 root - INFO - Entered save_object method 
+[ 2026-07-06 23:10:24,969 ] 58 root - INFO - Exited save_object method 
+[ 2026-07-06 23:10:24,969 ] 164 root - INFO - Model Trainer Artifact : ModelTrainerArtifact(trained_model_file_path='Artifacts\\07_06_2026_23_09_14\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9908970031707067, precision_score=0.9903905131874873, recall_score=0.9914040114613181), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9773260359655981, precision_score=0.9712509712509713, recall_score=0.983477576711251)) 
+[ 2026-07-06 23:10:24,971 ] 91 root - INFO - Model Training Completed 
