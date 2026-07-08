@@ -10,5 +10,8 @@ pyaml
 fastapi
 uvicorn
 python-multipart
+streamlit
+plotly
+requests
 
 ##-e .
