@@ -65,22 +65,27 @@ The project includes a **FastAPI backend** for model inference and an interactiv
                              │
                              ▼
                     ┌─────────────────┐
-                    │   Data Pipeline │
+                    │ Data Ingestion  │
                     └────────┬────────┘
                              │
                              ▼
                     ┌─────────────────┐
-                    │  Preprocessing  │
+                    │ Data Validation │
                     └────────┬────────┘
                              │
                              ▼
                     ┌─────────────────┐
-                    │   ML Model      │
+                    │Data Transformation│
                     └────────┬────────┘
                              │
                              ▼
                     ┌─────────────────┐
-                    │    Prediction   │
+                    │  Model Training │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   Prediction    │
                     └────────┬────────┘
                              │
                              ▼
@@ -91,8 +96,7 @@ The project includes a **FastAPI backend** for model inference and an interactiv
                              │
                              ▼
                     ┌─────────────────┐
-                    │ Prediction      │
-                    │ Report / Charts │
+                    │ Results & Charts│
                     └─────────────────┘
 ```
 
@@ -107,6 +111,22 @@ The project includes a **FastAPI backend** for model inference and an interactiv
 
 ---
 
+## 📸 Application Screenshots
+
+### Dashboard
+
+![Dashboard](dashboard.png)
+
+### Prediction Analysis
+
+![Prediction Analysis](prediction%20analysis.png)
+
+### Prediction Results
+
+![Prediction Results](prediction3.png)
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -115,6 +135,7 @@ NetworkSecurity/
 ├── .github/
 │   └── workflows/
 │
+├── .streamlit/
 ├── data_schema/
 ├── final_model/
 ├── Network_Data/
@@ -143,9 +164,6 @@ NetworkSecurity/
 
 ```bash
 git clone https://github.com/ranjitdarji/networksecurity.git
-```
-
-```bash
 cd networksecurity
 ```
 
@@ -179,7 +197,7 @@ pip install -r requirements.txt
 
 ## ▶️ Run the FastAPI Backend
 
-Start the FastAPI server using:
+Start the FastAPI server:
 
 ```bash
 uvicorn app:app --reload
@@ -210,8 +228,8 @@ The Streamlit dashboard will open in your browser.
 The dashboard provides:
 
 * Dataset upload
-* Prediction summary
 * Dataset information
+* Prediction summary
 * Safe vs phishing prediction analysis
 * Pie chart visualization
 * Bar chart visualization
@@ -235,7 +253,7 @@ Model Training
        ↓
 Model Evaluation
        ↓
-Model Tracking with MLflow
+MLflow Tracking
        ↓
 Prediction
        ↓
@@ -256,12 +274,12 @@ The project uses **MongoDB Atlas** for storing and managing project-related data
 
 MLflow is used for experiment and model tracking during the Machine Learning workflow.
 
-It helps in managing:
+It helps manage:
 
-* Model experiments
+* Experiments
 * Parameters
 * Metrics
-* Model versions
+* Models
 
 ---
 
