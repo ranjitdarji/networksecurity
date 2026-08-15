@@ -1,103 +1,175 @@
-# 🛡️ Network Security - Phishing Website Detection System
+# 🛡️ Network Security – Phishing Website Detection System
 
-A Machine Learning based web application that detects whether a website is **Safe** or **Phishing** using a trained classification model.
+A Machine Learning-based web application that detects and classifies websites as **Safe** or **Phishing** using a trained classification model.
 
-The project provides a modern Streamlit dashboard for prediction and a FastAPI backend for model inference.
-
----
-
-# 📌 Features
-
-- 📂 Upload CSV Dataset
-- 🤖 Machine Learning Prediction
-- ⚡ FastAPI Backend
-- 🎨 Interactive Streamlit Dashboard
-- 📊 Prediction Analytics
-- 🥧 Pie Chart & Bar Chart
-- 📥 Download Prediction Report
-- 🗄️ MongoDB Atlas Integration
-- 📈 MLflow Model Tracking
+The project includes a **FastAPI backend** for model inference and an interactive **Streamlit dashboard** for uploading datasets, generating predictions, analyzing results, and downloading prediction reports.
 
 ---
 
-# 🛠️ Tech Stack
+## 🚀 Features
+
+* 📂 Upload CSV datasets for prediction
+* 🤖 Machine Learning-based phishing detection
+* ⚡ FastAPI backend for model inference
+* 🎨 Interactive Streamlit dashboard
+* 📊 Prediction analytics and visualization
+* 🥧 Pie charts and bar charts
+* 🔎 Search prediction results
+* 📥 Download prediction reports
+* 🗄️ MongoDB Atlas integration
+* 📈 MLflow model tracking
+
+---
+
+## 🛠️ Tech Stack
 
 ### Programming Language
-- Python
 
-### Frontend
-- Streamlit
+* Python
+
+### Machine Learning & Data Processing
+
+* Scikit-learn
+* Pandas
+* NumPy
 
 ### Backend
-- FastAPI
 
-### Machine Learning
-- Scikit-Learn
-- Pandas
-- NumPy
+* FastAPI
+* Uvicorn
+
+### Frontend / Dashboard
+
+* Streamlit
 
 ### Database
-- MongoDB Atlas
+
+* MongoDB Atlas
 
 ### Model Tracking
-- MLflow
 
-### Visualization
-- Plotly Express
+* MLflow
+
+### Data Visualization
+
+* Plotly Express
 
 ---
 
-# 📂 Project Structure
+## 🏗️ Project Architecture
 
+```text
+                    ┌─────────────────┐
+                    │   CSV Dataset   │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   Data Pipeline │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │  Preprocessing  │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   ML Model      │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │    Prediction   │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │    Streamlit    │
+                    │    Dashboard    │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │ Prediction      │
+                    │ Report / Charts │
+                    └─────────────────┘
 ```
+
+---
+
+## 📊 Prediction Labels
+
+| Prediction | Meaning          |
+| ---------- | ---------------- |
+| `0`        | Safe Website     |
+| `1`        | Phishing Website |
+
+---
+
+## 📂 Project Structure
+
+```text
 NetworkSecurity/
 │
-├── app.py
-├── streamlit_app.py
-├── requirements.txt
-├── README.md
+├── .github/
+│   └── workflows/
+│
+├── data_schema/
 ├── final_model/
+├── Network_Data/
+├── networksecurity/
 ├── prediction_output/
-├── assets/
 ├── templates/
-└── networksecurity/
+├── valid_data/
+│
+├── app.py
+├── main.py
+├── streamlit_app.py
+├── push_data.py
+├── test_mongodb.py
+│
+├── requirements.txt
+├── setup.py
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-# 🚀 Installation
+## ⚙️ Installation
 
-## Clone Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ranjitdarji/NetworkSecurity.git
+git clone https://github.com/ranjitdarji/networksecurity.git
 ```
 
----
+```bash
+cd networksecurity
+```
 
-## Create Virtual Environment
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate Environment
+### 3. Activate the Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Linux / Mac
+#### Linux / macOS
 
 ```bash
 source venv/bin/activate
 ```
 
----
-
-## Install Requirements
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -105,108 +177,134 @@ pip install -r requirements.txt
 
 ---
 
-# ▶ Run FastAPI Backend
+## ▶️ Run the FastAPI Backend
+
+Start the FastAPI server using:
 
 ```bash
 uvicorn app:app --reload
 ```
 
-Open
+The API documentation will be available at:
 
-```
+```text
 http://127.0.0.1:8000/docs
 ```
 
 ---
 
-# ▶ Run Streamlit Frontend
+## ▶️ Run the Streamlit Dashboard
+
+Open another terminal and run:
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
+The Streamlit dashboard will open in your browser.
+
 ---
 
-# 📊 Workflow
+## 📈 Dashboard Capabilities
 
-```
-CSV Dataset
-      │
-      ▼
-Upload Dataset
-      │
-      ▼
-FastAPI Backend
-      │
-      ▼
-Preprocessing
-      │
-      ▼
-Machine Learning Model
-      │
-      ▼
+The dashboard provides:
+
+* Dataset upload
+* Prediction summary
+* Dataset information
+* Safe vs phishing prediction analysis
+* Pie chart visualization
+* Bar chart visualization
+* Searchable prediction results
+* CSV prediction report download
+
+---
+
+## 🔄 Machine Learning Workflow
+
+```text
+Data Collection
+       ↓
+Data Ingestion
+       ↓
+Data Validation
+       ↓
+Data Transformation
+       ↓
+Model Training
+       ↓
+Model Evaluation
+       ↓
+Model Tracking with MLflow
+       ↓
 Prediction
-      │
-      ▼
+       ↓
+FastAPI
+       ↓
 Streamlit Dashboard
-      │
-      ▼
-Download Prediction Report
 ```
 
 ---
 
-# 🎯 Prediction Labels
+## 🗄️ Database
 
-| Prediction | Meaning |
-|------------|---------|
-| 0 | Safe Website |
-| 1 | Phishing Website |
+The project uses **MongoDB Atlas** for storing and managing project-related data.
 
 ---
 
-# 📈 Dashboard Features
+## 📈 MLflow
 
-- image: D:\udemyfinal\NetworkSecurity\deshboard.png
+MLflow is used for experiment and model tracking during the Machine Learning workflow.
 
-- Dashboard Overview
-- Prediction Summary
-- Dataset Information
-- Pie Chart
-- Bar Chart
-- Search Prediction Results
-- Download CSV Report
+It helps in managing:
 
----
-
-# 🎯 Future Improvements
-
--image: D:\udemyfinal\NetworkSecurity\prediction (2).png , D:\udemyfinal\NetworkSecurity\prediction3.png , D:\udemyfinal\NetworkSecurity\prediction4.png
-
-- URL Prediction using Text Input
-- User Authentication
-- Cloud Deployment (AWS)
-- Docker Support
-- Email Alerts
-- Real-time Website Detection
+* Model experiments
+* Parameters
+* Metrics
+* Model versions
 
 ---
 
-# 👨‍💻 Developer
+## 🔮 Future Improvements
 
-- image: D:\udemyfinal\NetworkSecurity\about.png
+* URL-based real-time phishing detection
+* User authentication
+* Cloud deployment
+* Real-time website analysis
+* Email alerts
+* Improved model performance
+* Production-ready monitoring
+
+---
+
+## 🎯 Project Objective
+
+The main objective of this project is to build an end-to-end Machine Learning application that can assist in identifying potentially phishing websites and demonstrate the integration of **Machine Learning, APIs, databases, experiment tracking, and an interactive web interface**.
+
+---
+
+## 👨‍💻 Developer
 
 **Ranjit Darji**
 
-Final Year Engineering Student
+Engineering Student
 
-Machine Learning | Data Science | MLOps
+### Interests
+
+* Machine Learning
+* Data Science
+* Python
+* MLOps
+* Backend Development
 
 ---
 
-# ⭐ If you like this project
+## ⭐ Support
 
-Please consider giving this repository a ⭐ on GitHub.
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
 
+---
 
+## 📜 License
 
+This project is intended for educational and portfolio purposes.
